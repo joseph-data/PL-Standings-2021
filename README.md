@@ -19,10 +19,7 @@ This project pulls the English Premier League standings from the API-FOOTBALL se
 ## Project Layout
 
 ```text
-.
-├── assets/
-├── main.py
-├── test.ipynb
+├── pipeline.ipynb
 ├── pyproject.toml
 ├── uv.lock
 └── .env                # local secrets (never commit real keys)
