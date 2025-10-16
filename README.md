@@ -6,7 +6,7 @@
 
 ## Overview
 
-This project pulls the English Premier League standings from the API-FOOTBALL service (via RapidAPI), reshapes the payload with pandas, and upserts the records into a MySQL database. The workflow lives in `test.ipynb`, showing the full data journey from HTTP request to database persistence, while `main.py` serves as the package entry point.
+This project pulls the English Premier League standings from the API-FOOTBALL service (via RapidAPI), reshapes the payload with pandas, and upserts the records into a MySQL database. The workflow lives in `pipeline.ipynb`, showing the full data journey from HTTP request to database persistence and entry point.
 
 ## Key Features
 
@@ -28,7 +28,7 @@ This project pulls the English Premier League standings from the API-FOOTBALL se
 ## Prerequisites
 
 - Python 3.13 or newer.
-- Jupyter (Notebook or Lab) for running `test.ipynb`.
+- Jupyter (Notebook or Lab) for running `pipeline.ipynb`.
 - A reachable MySQL 8.0+ instance with rights to create tables and insert data.
 - An API-FOOTBALL key issued via [RapidAPI](https://rapidapi.com/api-sports/api/api-football/).
 
@@ -88,7 +88,7 @@ CREATE TABLE standings (
 );
 ```
 
-The UPSERT defined in `test.ipynb` relies on this primary key so that repeated runs simply update existing rows.
+The UPSERT defined in `pipeline.ipynb` relies on this primary key so that repeated runs simply update existing rows.
 
 ## Running the Pipeline
 
@@ -98,7 +98,7 @@ The UPSERT defined in `test.ipynb` relies on this primary key so that repeated r
    ```
 2. Start Jupyter and open the notebook:
    ```bash
-   jupyter notebook test.ipynb
+   jupyter notebook pipeline.ipynb
    ```
 3. Run the cells in order. The notebook will:
    - Request the standings JSON.
